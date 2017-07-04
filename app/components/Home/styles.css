@@ -1,0 +1,21 @@
+.home-container {
+  /* Calculate height based on fixed header */
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  display: block;
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 2px;
+  background: palevioletred;
+}
+
+.button:hover {
+  background: #000;
+}
