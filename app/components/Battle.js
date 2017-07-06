@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import Loader from './presentational/Loader'
 import '../index.css'
 
@@ -123,10 +124,11 @@ export default class Battle extends React.Component {
     const playerOneName = this.state.playerOneName,
           playerTwoName = this.state.playerTwoName,
           playerOneImage = this.state.playerOneImage,
-          playerTwoImage = this.state.playerTwoImage
+          playerTwoImage = this.state.playerTwoImage,
+          match = this.props.match
 
     return (
-      <section>
+      <section className='battle-container'>
         <div className='row'>
           {!playerOneName &&
             <PlayerInput
@@ -153,6 +155,26 @@ export default class Battle extends React.Component {
               username={playerTwoName}
               onReset={this.handleReset}
               id='playerTwo' />}
+        </div>
+        <div className='battle-btn-container'>
+        {playerOneImage && playerTwoImage
+          ? <Link
+              className='button'
+              to={{
+                pathname: match.url + '/results',
+                search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName
+              }}>
+                Battle
+            </Link>
+         : <Link
+            className='button disabled'
+            to={{
+              pathname: match.url + '/results',
+              search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName
+            }}>
+              Battle
+          </Link>
+        }
         </div>
       </section>
     )

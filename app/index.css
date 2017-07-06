@@ -62,25 +62,57 @@ a {
 
 .button {
   display: block;
+  margin: 0 auto;
   padding: 10px 30px;
   color: #fff;
   font-size: 12px;
   border-radius: 2px;
   border: none;
+  text-align: center;
   background: palevioletred;
 }
 
+.disabled {
+  background: #f8f8f8;
+  color: #d0d2d3;
+}
+
+.button.disabled:hover {
+  background: #f8f8f8;
+  color: #d0d2d3;
+}
+
 .button:hover {
-  background: #000;
+  opacity: 0.85;
 }
 
 /* Battle */
 
+.battle-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 160px);
+}
+
 .row {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: calc(100vh - 160px);
+}
+
+.battle-btn-container {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 20px 0;
+  background: #fff;
+}
+
+.battle-btn {
+  visibility: hidden;
 }
 
 .column {
@@ -109,6 +141,7 @@ a {
 .reset {
   border: none;
   background: transparent;
+  margin-bottom: 15px;
   color: palevioletred;
   display: block;
   width: 100%;
