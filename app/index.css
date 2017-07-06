@@ -1,5 +1,6 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-size: 12px;
   background: #fff;
 }
 
@@ -42,7 +43,6 @@ a {
 }
 
 .nav li {
-  font-size: 12px;
   margin-right: 15px;
 }
 
@@ -53,12 +53,11 @@ a {
 /* Home */
 
 .home-container {
-  /* Calculate height based on fixed header */
-  height: calc(100vh - 160px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: calc(100vh - 160px);
 }
 
 .button {
@@ -76,14 +75,16 @@ a {
 
 /* Battle */
 
-
+.row {
+  display: flex;
+  justify-content: space-around;
+}
 
 /* Popular */
 
 .languages {
   display: flex;
   justify-content: center;
-  font-size: 12px;
   font-weight: 400;
 }
 
@@ -96,7 +97,6 @@ a {
 .popular-list {
   display: flex;
   flex-wrap: wrap;
-  font-size: 12px;
   justify-content: space-around;
   margin-top: 25px;
 }
@@ -118,9 +118,11 @@ a {
 .avatar {
   width: 35px;
   height: 35px;
-  border-radius: 17.5px;
   margin: 10px auto 0 auto;
+  border-radius: 17.5px;
 }
+
+/* Loader */
 
 .spinner {
   display: flex;
@@ -132,11 +134,11 @@ a {
 }
 
 .spinner > div {
+  display: inline-block;
   width: 8px;
   height: 8px;
   background-color: palevioletred;
   border-radius: 100%;
-  display: inline-block;
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 

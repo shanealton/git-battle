@@ -82,13 +82,13 @@ export default class Popular extends React.Component {
 
   render() {
     return (
-      <div>
+      <section>
         <SelectLanguage
           selectedLanguage={this.state.selectedLanguage}
           onSelect={this.updateLanguage}
         />
         {!this.state.repos ? <Loader /> : <Repos repos={this.state.repos} />}
-      </div>
+      </section>
     )
   }
 }
