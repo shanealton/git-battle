@@ -32,12 +32,13 @@ class PlayerInput extends React.Component {
   render() {
     return (
       <form className='column' onSubmit={this.handleSubmit}>
-        <label className='header' htmlFor='username'>
+        <label htmlFor='username'>
           {this.props.label}
         </label>
         <input
           id='username'
-          placeholder='github username'
+          className='column-input'
+          placeholder='GitHub username'
           type='text'
           autoComplete='off'
           value={this.state.username}
