@@ -106,6 +106,21 @@ a {
   font-size: 18px;
 }
 
+.reset {
+  border: none;
+  background: transparent;
+  color: palevioletred;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.reset:hover {
+  cursor: pointer;
+}
+
+
+
 /* Popular */
 
 .languages {
