@@ -9,12 +9,6 @@
   "scripts": {
     "start": "webpack-dev-server --open"
   },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
-  },
   "dependencies": {
     "axios": "^0.16.2",
     "normalize.css": "^7.0.0",

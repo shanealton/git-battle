@@ -10,14 +10,16 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.(js)$/, loader: 'babel-loader', exclude: /(node_modules)/, query: {compact: false} },
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /(node_modules)/, query: {presets: ['env','react'], compact: false} },
       { test: /\.css$/, loader: ['style-loader', 'css-loader'] }
     ]
   },
   devServer: {
     historyApiFallback: true
   },
-  plugins: [new HTMLWebpackPlugin({
-    template: 'app/index.html'
-  })]
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: 'app/index.html'
+    })
+  ]
 }
