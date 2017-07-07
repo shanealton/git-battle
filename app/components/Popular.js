@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import api from '../utils/api'
 import Loader from './presentational/Loader'
-import '../index.css'
+import styles from '../index.sass'
 
 const SelectLanguage = (props) => {
   let languages = ['All', 'JavaScript', 'Swift', 'Java', 'CSS', 'Python']
   return (
-    <ul className='languages'>
+    <ul className={styles.languages}>
       {languages.map((lang) => {
         return (
           <li
@@ -24,14 +24,14 @@ const SelectLanguage = (props) => {
 
 const Repos = (props) => {
   return (
-    <ul className='popular-list'>
+    <ul className={styles.popularList}>
       {props.repos.map((repo, i) => {
         return (
-          <li key={repo.name} className='popular-item'>
-            <div className='popular-rank'>#{i + 1}</div>
-            <ul className='space-list-items'>
+          <li key={repo.name} className={styles.popularItem}>
+            <div>#{i + 1}</div>
+            <ul className={styles.spaceListItems}>
               <li>
-                <img className='avatar' src={repo.owner.avatar_url} alt={repo.owner.login} />
+                <img className={styles.avatar} src={repo.owner.avatar_url} alt={repo.owner.login} />
               </li>
               <li><a href={repo.html_url}>{repo.name}</a></li>
               <li>@{repo.owner.login}</li>

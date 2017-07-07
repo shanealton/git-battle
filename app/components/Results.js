@@ -1,9 +1,10 @@
 import React from 'react'
+import styles from '../index.sass'
 
 class Results extends React.Component {
   render() {
     return (
-      <section>Results</section>
+      <section className={styles.container}>Results</section>
     )
   }
 }

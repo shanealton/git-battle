@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../index.css'
+import styles from '../index.sass'
 
 export default class Home extends React.Component {
   render() {
     return (
-      <section className='home-container'>
+      <section className={styles.center}>
         <h1>Github Battle: Battle your friends.</h1>
-        <Link className='button' to='/battle'>Battle</Link>
+        <Link className={styles.button} to='/battle'>Battle</Link>
       </section>
     )
   }

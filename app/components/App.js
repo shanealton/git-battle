@@ -5,7 +5,7 @@ import Home from './Home'
 import Battle from './Battle'
 import Results from './Results'
 import Popular from './Popular'
-
+import styles from '../index.sass'
 
 export default class App extends React.Component {
   render() {
@@ -13,7 +13,7 @@ export default class App extends React.Component {
       <Router>
       <section>
       <Nav />
-        <div className='container'>
+        <div className={styles.container}>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/battle' component={Battle} />

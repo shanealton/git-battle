@@ -1,0 +1,201 @@
+/*  Variables  */
+$primary: palevioletred
+$light: #fff
+$medium: #d0d2d3
+$disabled: #f8f8f8
+
+$border-radius: 3px
+
+$center-vert: calc(100vh - 120px)
+
+body
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif
+  font-size: 12px
+  background: #fff
+
+ul
+  padding: 0
+
+li
+  margin: 0 25px 0 0
+  list-style-type: none
+
+a
+  text-decoration: none
+  color: inherit
+/* Link states */
+
+.active
+  color: $primary
+
+/* Containers & Layout */
+
+.container
+  padding-top: 60px
+  max-width: 900px
+  margin: 0 auto
+
+.center
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  height: $center-vert
+
+.row
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: space-around
+
+
+.column
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+
+
+.formColumn
+  composes: column
+  width: 250px
+  height: 150px
+
+
+/* Inputs */
+
+.input
+  width: 80%
+  display: block
+  padding: 10px
+  outline: none
+  border: none
+  border-bottom: 1px solid #ebe8e4
+  border-radius: 2px
+
+
+/* Avatars */
+
+.avatar
+  width: 45px
+  height: 45px
+  margin: 10px auto 0 auto
+  border-radius: 22.5px
+
+
+/* Buttons */
+
+.button
+  display: block
+  margin: 0 auto
+  padding: 10px 30px
+  background: $primary
+  color: $light
+  border: none
+  border-radius: $border-radius
+  text-align: center
+  cursor: pointer
+
+
+.button:hover
+  opacity: 0.85
+
+.disabled
+  composes: button
+  background: $disabled
+  color: $medium
+
+
+.reset
+  composes: button
+  background: transparent
+  color: palevioletred
+
+
+/* Navbar */
+
+.navbar
+  display: flex
+  align-items: center
+  position: fixed
+  width: 100%
+  padding: 0 25px
+  height: 60px
+  background: $light
+  z-index: 1
+
+
+.nav
+  display: flex
+
+/* Battle */
+
+.formColumn label
+  font-size: 18px
+
+/* Popular */
+
+.languages
+  display: flex
+  justify-content: center
+  font-weight: 400
+
+
+.languages li
+  cursor: pointer
+
+
+.popularList
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  margin-top: 25px
+
+
+.popularItem
+  width: 160px
+  margin: 20px
+  text-align: center
+
+
+.spaceListItems li
+  margin-bottom: 7px
+
+
+.spaceListItems a
+  color: palevioletred
+
+
+/* Loader */
+
+.spinner
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 30px
+  height: $center-vert
+  margin: 0 auto
+
+
+.spinner > div
+  display: inline-block
+  width: 8px
+  height: 8px
+  background-color: $primary
+  border-radius: 100%
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both
+
+
+.spinner > div:nth-of-type(1)
+  animation-delay: -0.32s
+
+
+.spinner > div:nth-of-type(2)
+  animation-delay: -0.16s
+
+
+@keyframes sk-bouncedelay
+  0%, 80%, 100%
+    transform: scale(0.7)
+  40%
+    transform: scale(1)

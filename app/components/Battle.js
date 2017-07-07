@@ -1,35 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import Loader from './presentational/Loader'
-import '../index.css'
-
-const PlayerPreview = (props) => {
-  return (
-    <section>
-      <div className='column'>
-        <img
-          className='avatar'
-          src={props.avatar}
-          alt={props.username}
-        />
-        <h2 className='username'>@{props.username}</h2>
-      </div>
-      <button
-        className='reset'
-        onClick={props.onReset.bind(null, props.id)}>
-          Reset
-      </button>
-    </section>
-  )
-}
-
-PlayerPreview.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  onReset: PropTypes.func.isRequired
-}
+import PlayerPreview from './presentational/Battle/PlayerPreview'
+import styles from '../index.sass'
 
 class PlayerInput extends React.Component {
   constructor(props) {
@@ -59,13 +32,13 @@ class PlayerInput extends React.Component {
 
   render() {
     return (
-      <form className='column' onSubmit={this.handleSubmit}>
+      <form className={styles.formColumn} onSubmit={this.handleSubmit}>
         <label htmlFor='username'>
           {this.props.label}
         </label>
         <input
           id='username'
-          className='column-input'
+          className={styles.input}
           placeholder='GitHub username'
           type='text'
           autoComplete='off'
@@ -73,7 +46,7 @@ class PlayerInput extends React.Component {
           onChange={this.handleChange}
         />
         <button
-          className='button'
+          className={styles.button}
           type='submit'
           disabled={!this.state.username}>
             Submit
@@ -127,9 +100,11 @@ export default class Battle extends React.Component {
           playerTwoImage = this.state.playerTwoImage,
           match = this.props.match
 
+
+
     return (
-      <section className='battle-container'>
-        <div className='row'>
+      <section className={styles.center}>
+        <div className={styles.row}>
           {!playerOneName &&
             <PlayerInput
               id='playerOne'
@@ -156,25 +131,12 @@ export default class Battle extends React.Component {
               onReset={this.handleReset}
               id='playerTwo' />}
         </div>
-        <div className='battle-btn-container'>
-        {playerOneImage && playerTwoImage
-          ? <Link
-              className='button'
-              to={{
-                pathname: match.url + '/results',
-                search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName
-              }}>
-                Battle
-            </Link>
-         : <Link
-            className='button disabled'
-            to={{
-              pathname: match.url + '/results',
-              search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName
-            }}>
+        <div className={styles.row}>
+          <Link
+            className={playerOneImage && playerTwoImage ? styles.button : styles.disabled}
+            to={{ pathname: match.url + '/results', search: `?playerOneName=` + playerOneName + '&playerTwoName=' + playerTwoName }}>
               Battle
           </Link>
-        }
         </div>
       </section>
     )

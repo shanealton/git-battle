@@ -1,9 +1,9 @@
 import React from 'react'
-import '../../index.css'
+import styles from '../../index.sass'
 
 const Loader = () => {
   return (
-    <div className="spinner">
+    <div className={styles.spinner}>
       <div></div>
       <div></div>
       <div></div>
