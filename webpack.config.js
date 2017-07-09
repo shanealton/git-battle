@@ -13,7 +13,7 @@ module.exports = {
     loaders: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /(node_modules)/, query: {presets: ['env','react'], compact: false} },
       {
-        test: /\.(css|sass)$/,
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [

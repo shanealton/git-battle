@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import Nav from './Nav'
-import Home from './Home'
-import Battle from './Battle'
+import Nav from './presentational/Nav/Nav'
+import Home from './presentational/Home/Home'
+import Battle from './container/Battle/Battle'
 import Results from './Results'
-import Popular from './Popular'
-import styles from '../index.sass'
+import Popular from './container/Popular/Popular'
+import styles from '../index.css'
 
 export default class App extends React.Component {
   render() {

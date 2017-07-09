@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import api from '../utils/api'
-import Loader from './presentational/Loader'
-import styles from '../index.sass'
+import api from '../../../utils/api'
+import Loader from '../../presentational/Loader/Loader'
+import styles from './styles.css'
 
 const SelectLanguage = (props) => {
   let languages = ['All', 'JavaScript', 'Swift', 'Java', 'CSS', 'Python']

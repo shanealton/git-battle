@@ -1,0 +1,7 @@
+.center {
+  composes: center from '../../../index.css';
+}
+
+.button {
+  composes: button from '../../../index.css';
+}

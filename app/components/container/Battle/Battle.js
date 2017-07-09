@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import PlayerPreview from './presentational/Battle/PlayerPreview'
-import styles from '../index.sass'
+import PlayerPreview from '../../presentational/Battle/PlayerPreview'
+import styles from './styles.css'
 
 class PlayerInput extends React.Component {
   constructor(props) {
@@ -132,11 +132,14 @@ export default class Battle extends React.Component {
               id='playerTwo' />}
         </div>
         <div className={styles.row}>
-          <Link
-            className={playerOneImage && playerTwoImage ? styles.button : styles.disabled}
-            to={{ pathname: match.url + '/results', search: `?playerOneName=` + playerOneName + '&playerTwoName=' + playerTwoName }}>
-              Battle
-          </Link>
+        {playerOneImage && playerTwoImage
+          ? <Link
+              className={styles.button}
+              to={{ pathname: match.url + '/results', search: `?playerOneName=` + playerOneName + '&playerTwoName=' + playerTwoName }}>
+                Battle
+            </Link>
+          : <div className={styles.disabled}>Battle</div>
+        }
         </div>
       </section>
     )

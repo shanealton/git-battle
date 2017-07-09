@@ -1,0 +1,35 @@
+/* Loader */
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30px;
+  height: var(--center-vert);
+  margin: 0 auto;
+}
+
+.spinner > div {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 100%;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner > div:nth-of-type(1) {
+  animation-delay: -0.32s;
+}
+
+.spinner > div:nth-of-type(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.7);
+  } 40% {
+    transform: scale(1)
+  }
+}

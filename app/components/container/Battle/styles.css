@@ -1,0 +1,35 @@
+.center {
+  composes: center from '../../../index.css';
+}
+
+.column {
+  composes: column from '../../../index.css';
+}
+
+.row {
+  composes: row from '../../../index.css';
+}
+
+.formColumn {
+  composes: formColumn from '../../../index.css';
+}
+
+label {
+  font-size: 18px;
+}
+
+.input {
+  composes: input from '../../../index.css';
+}
+
+.button {
+  composes: button from '../../../index.css';
+}
+
+.disabled {
+  composes: disabled from '../../../index.css';
+}
+
+.reset {
+  composes: reset from '../../../index.css';
+}
