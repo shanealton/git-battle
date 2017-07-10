@@ -4,14 +4,14 @@ const key = {id: 'CLIENT_ID', secret: 'CLIENT_SECRET'},
       params = `?client_id=${key.id}&client_secret=${key.secret}`
 
 const getProfile = (username) => {
-  return axios.get('https://api.github.com/user/' + username + params)
+  return axios.get('https://api.github.com/users/' + username)
     .then((user) => {
       return user.data
     })
 }
 
 const getRepos = (username) => {
-  return axios.get('https://api.github.com/user' + username + '/repos' + params + '&per_page=100')
+  return axios.get('https://api.github.com/users/' + username + '/repos')
 }
 
 const getStarCount = (repos) => {

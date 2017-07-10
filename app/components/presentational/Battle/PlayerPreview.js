@@ -5,7 +5,7 @@ import styles from '../../../index.css';
 const PlayerPreview = (props) => {
   return (
     <section>
-      <div className={styles.column}>
+      <div className={styles.formColumn}>
         <img
           className={styles.avatar}
           src={props.avatar}
